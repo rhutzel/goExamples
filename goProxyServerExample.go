@@ -14,8 +14,8 @@ func main() {
 
 	for idx := 0; idx < 20; idx++ {
 		go func() {
-			body, _ := proxyServerExample.RequestContent("http://localhost")
-			fmt.Println(strings.Replace(string(body)[:100], "\n", " ", -1) + "...")
+			body, _ := goProxyServer.RequestContent("http://localhost")
+			fmt.Println(strings.Replace(string(body)[:25], "\n", " ", -1) + "...")
 			waitGroup.Done()
 		}()
 		time.Sleep(25 * time.Millisecond)
